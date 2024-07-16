@@ -19,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dm.berxley.bankapp.composables.BottomNavigationBar
 import com.dm.berxley.bankapp.composables.CardSection
+import com.dm.berxley.bankapp.composables.CurrenciesSection
 import com.dm.berxley.bankapp.composables.FinanceSection
 import com.dm.berxley.bankapp.composables.WalletSection
 import com.dm.berxley.bankapp.ui.theme.BankAppTheme
@@ -53,8 +54,8 @@ class MainActivity : ComponentActivity() {
                 CardSection()
                 Spacer(modifier = Modifier.height(16.dp))
                 FinanceSection()
-                Spacer(modifier = Modifier.height(16.dp))
-                //CurrenciesSection()
+//                Spacer(modifier = Modifier.height(16.dp))
+                CurrenciesSection()
             }
         }
     }

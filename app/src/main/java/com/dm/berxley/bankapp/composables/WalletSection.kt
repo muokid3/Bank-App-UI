@@ -61,9 +61,7 @@ fun WalletSection() {
             modifier = Modifier
                 .clip(RoundedCornerShape(15.dp))
                 .background(MaterialTheme.colorScheme.secondaryContainer)
-                .clickable {}
-                .padding(6.dp)
-        ) {
+                .clickable {}) {
             IconButton(
                 onClick = {
                 }) {
