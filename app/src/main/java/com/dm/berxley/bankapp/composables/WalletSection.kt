@@ -41,7 +41,7 @@ fun WalletSection() {
     ) {
         Column {
             Text(
-                text = "Wallet",
+                text = "Home",
                 fontSize = 17.sp,
                 color = MaterialTheme.colorScheme.onBackground
             )
