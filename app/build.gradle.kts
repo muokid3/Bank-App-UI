@@ -69,5 +69,7 @@ dependencies {
 
 
     implementation("androidx.compose.material:material-icons-extended:1.6.8")
+    implementation("io.github.bytebeats:compose-charts:0.2.1")
+
 
 }
