@@ -17,21 +17,15 @@ import com.dm.berxley.bankapp.composables.WalletSection
 
 @Composable
 fun HomeScreen() {
-    Scaffold(
-        bottomBar = { BottomNavigationBar() }
-    )
-    { padding ->
-        Column(
-            Modifier.padding(padding)
-        ) {
-            WalletSection()
-            Spacer(modifier = Modifier.height(16.dp))
-            CardSection()
-            Spacer(modifier = Modifier.height(16.dp))
-            FinanceSection()
+
+    Column {
+        WalletSection()
+        Spacer(modifier = Modifier.height(16.dp))
+        CardSection()
+        Spacer(modifier = Modifier.height(16.dp))
+        FinanceSection()
 //                Spacer(modifier = Modifier.height(16.dp))
-            CurrenciesSection()
-        }
+        CurrenciesSection()
     }
 }
 

@@ -88,10 +88,10 @@ val currencies = listOf(
 fun CurrenciesSection() {
 
     var isVisible by remember {
-        mutableStateOf(false)
+        mutableStateOf(true)
     }
     var iconState by remember {
-        mutableStateOf(Icons.Rounded.KeyboardArrowUp)
+        mutableStateOf(Icons.Rounded.KeyboardArrowDown)
     }
 
     Box(

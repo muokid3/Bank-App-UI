@@ -41,7 +41,6 @@ fun WalletScreen() {
                 modifier = Modifier.fillMaxWidth()
             )
         },
-        bottomBar = { BottomNavigationBar() }
     ) { paddingValues ->
         MainWalletScreen(
             modifier = Modifier
