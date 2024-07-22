@@ -60,8 +60,9 @@ fun ActionItem(
     ) {
         Box(
             modifier = Modifier
-                .size(70.dp)
+                .size(60.dp)
                 .clip(CircleShape)
+                .background(Color.White)
                 .background(color),
             contentAlignment = Alignment.Center
         ) {
@@ -74,7 +75,7 @@ fun ActionItem(
 
         }
 
-        Spacer(modifier = Modifier.height(28.dp))
+        Spacer(modifier = Modifier.height(12.dp))
 
         Text(
             text = text,

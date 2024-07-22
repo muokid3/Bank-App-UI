@@ -46,7 +46,7 @@ fun WalletCardSection(modifier: Modifier) {
                 .fillMaxWidth()
                 .padding(horizontal = 40.dp)
                 .clip(RoundedCornerShape(20.dp))
-                .height(100.dp)
+                .height(80.dp)
                 .background(
                     brush = Brush.horizontalGradient(listOf(Color.Green, Color.Yellow))
                 )
@@ -55,7 +55,7 @@ fun WalletCardSection(modifier: Modifier) {
         ElevatedCard(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(240.dp)
+                .height(200.dp)
                 .padding(horizontal = 22.dp, vertical = 10.dp),
             elevation = CardDefaults.cardElevation(6.dp),
             shape = RoundedCornerShape(20.dp)

@@ -20,6 +20,8 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dm.berxley.bankapp.composables.BottomNavigationBar
+import com.dm.berxley.bankapp.composables.GraphsSection
+import com.dm.berxley.bankapp.composables.SpendingSection
 import com.dm.berxley.bankapp.composables.WalletActionsSection
 import com.dm.berxley.bankapp.composables.WalletCardSection
 import com.dm.berxley.bankapp.composables.WalletTopBar
@@ -54,10 +56,20 @@ fun WalletScreen() {
 @Composable
 fun MainWalletScreen(modifier: Modifier) {
     Column(modifier = modifier.verticalScroll(rememberScrollState())) {
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(8.dp))
         WalletCardSection(modifier = Modifier.fillMaxWidth())
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(8.dp))
         WalletActionsSection(modifier = Modifier.fillMaxWidth())
+        Spacer(modifier = Modifier.height(12.dp))
+        SpendingSection(modifier = Modifier.fillMaxWidth())
+        Spacer(modifier = Modifier.height(12.dp))
+        GraphsSection(modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp)
+            .height(150.dp))
+        Spacer(modifier = Modifier.height(100.dp))
+
+
     }
 }
 
