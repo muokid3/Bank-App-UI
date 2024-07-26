@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.DirectionsRun
@@ -36,6 +37,9 @@ import com.dm.berxley.bankapp.randomColor
 
 @Composable
 fun SpendingSection(modifier: Modifier = Modifier) {
+
+    val state = rememberLazyListState()
+
     Text(
         modifier = Modifier.padding(horizontal = 16.dp),
         text = "Spending Breakdown",
@@ -46,11 +50,12 @@ fun SpendingSection(modifier: Modifier = Modifier) {
 
     LazyRow(
         modifier = modifier,
-        contentPadding = PaddingValues(horizontal = 16.dp)
+        contentPadding = PaddingValues(horizontal = 16.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        state = state
     ) {
         itemsIndexed(spendingItems) { index, item ->
             SpendingItem(spendingItem = item, onItemClick = {})
-            Spacer(modifier = Modifier.width(16.dp))
         }
     }
 }

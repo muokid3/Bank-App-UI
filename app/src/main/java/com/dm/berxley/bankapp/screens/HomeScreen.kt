@@ -20,11 +20,9 @@ fun HomeScreen() {
 
     Column {
         WalletSection()
-        Spacer(modifier = Modifier.height(16.dp))
         CardSection()
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(8.dp))
         FinanceSection()
-//                Spacer(modifier = Modifier.height(16.dp))
         CurrenciesSection()
     }
 }

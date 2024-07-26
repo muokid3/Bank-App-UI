@@ -5,9 +5,11 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.StarHalf
@@ -61,17 +63,23 @@ val financeItems = listOf(
 
 @Composable
 fun FinanceSection() {
+    val state = rememberLazyListState()
+    
     Column {
         Text(
             text = "Finance",
             fontSize = 24.sp,
             color = MaterialTheme.colorScheme.onBackground,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
         )
 
 
-        LazyRow {
+        LazyRow(
+            contentPadding = PaddingValues(horizontal = 16.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            state = state
+        ) {
             items(financeItems.size) {
                 FinanceItem(it)
             }
@@ -82,18 +90,15 @@ fun FinanceSection() {
 @Composable
 fun FinanceItem(index: Int) {
     val finance = financeItems[index]
-    var lastPadding = 0.dp
-    if (index == financeItems.size - 1) {
-        lastPadding = 16.dp
-    }
 
-    Box(modifier = Modifier.padding(start = 16.dp, end = lastPadding)) {
+
+    Box {
 
         Column(
             modifier = Modifier
                 .clip(RoundedCornerShape(25.dp))
                 .size(120.dp)
-                .clickable {  }
+                .clickable { }
                 .background(MaterialTheme.colorScheme.secondaryContainer)
                 .padding(13.dp),
             verticalArrangement = Arrangement.SpaceBetween
