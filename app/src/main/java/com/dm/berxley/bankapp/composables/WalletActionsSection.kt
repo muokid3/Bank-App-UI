@@ -60,7 +60,7 @@ fun ActionItem(
     ) {
         Box(
             modifier = Modifier
-                .size(60.dp)
+                .size(40.dp)
                 .clip(CircleShape)
                 .background(Color.White)
                 .background(color),
@@ -70,7 +70,7 @@ fun ActionItem(
                 imageVector = icon,
                 contentDescription = text,
                 tint = Color.Black,
-                modifier = Modifier.size(30.dp)
+                modifier = Modifier.size(20.dp)
             )
 
         }

@@ -35,14 +35,14 @@ fun WalletSection() {
     Row(
         Modifier
             .fillMaxWidth()
-            .padding(16.dp),
+            .padding(horizontal = 16.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
         Column {
             Text(
-                text = "Home",
-                fontSize = 17.sp,
+                text = "Welcome Dennis,",
+                fontSize = 18.sp,
                 color = MaterialTheme.colorScheme.onBackground
             )
 
@@ -50,7 +50,7 @@ fun WalletSection() {
 
             Text(
                 text = "$ 43,465.78",
-                fontSize = 24.sp,
+                fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onBackground
             )

@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -32,6 +33,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.font.toFontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -55,7 +57,7 @@ fun WalletCardSection(modifier: Modifier) {
         ElevatedCard(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(200.dp)
+                .height(150.dp)
                 .padding(horizontal = 22.dp, vertical = 10.dp),
             elevation = CardDefaults.cardElevation(6.dp),
             shape = RoundedCornerShape(20.dp)
@@ -89,9 +91,8 @@ fun CardContent(modifier: Modifier = Modifier) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(22.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+                .padding(horizontal = 12.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -103,22 +104,20 @@ fun CardContent(modifier: Modifier = Modifier) {
                 fontFamily = Font(R.font.play).toFontFamily(),
             )
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(14.dp))
 
             Text(
                 text = "$54,545.54",
-                fontSize = 40.sp,
+                fontSize = 26.sp,
+                fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onPrimary,
-                fontFamily = Font(R.font.play).toFontFamily(),
-            )
+                fontFamily = Font(R.font.play).toFontFamily())
         }
-
-
 
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(22.dp)
+                .padding(start = 22.dp, end = 22.dp, bottom = 8.dp)
                 .align(Alignment.BottomCenter),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.Bottom
@@ -126,7 +125,7 @@ fun CardContent(modifier: Modifier = Modifier) {
 
             Text(
                 text = "**** 5436",
-                fontSize = 23.sp,
+                fontSize = 22.sp,
                 color = MaterialTheme.colorScheme.onPrimary.copy(0.6f),
                 fontFamily = Font(R.font.play).toFontFamily(),
             )
@@ -134,7 +133,7 @@ fun CardContent(modifier: Modifier = Modifier) {
             Icon(
                 painter = painterResource(id = R.drawable.ic_visa),
                 contentDescription = null,
-                Modifier.width(100.dp),
+                Modifier.width(75.dp),
                 tint = MaterialTheme.colorScheme.background
             )
         }

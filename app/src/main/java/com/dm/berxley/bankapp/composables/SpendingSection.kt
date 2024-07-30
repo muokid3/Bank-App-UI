@@ -44,9 +44,9 @@ fun SpendingSection(modifier: Modifier = Modifier) {
         modifier = Modifier.padding(horizontal = 16.dp),
         text = "Spending Breakdown",
         fontFamily = Font(R.font.play).toFontFamily(),
-        fontSize = 25.sp
+        fontSize = 22.sp
     )
-    Spacer(modifier = Modifier.height(16.dp))
+    Spacer(modifier = Modifier.height(8.dp))
 
     LazyRow(
         modifier = modifier,
@@ -64,7 +64,7 @@ fun SpendingSection(modifier: Modifier = Modifier) {
 fun SpendingItem(spendingItem: SpendingItem, onItemClick: () -> Unit) {
     ElevatedCard(
         onClick = onItemClick,
-        modifier = Modifier.size(130.dp),
+        modifier = Modifier.size(120.dp),
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(
@@ -72,20 +72,20 @@ fun SpendingItem(spendingItem: SpendingItem, onItemClick: () -> Unit) {
                 .fillMaxSize()
                 .background(Color.White)
                 .background(spendingItem.color.copy(0.5f))
-                .padding(20.dp),
+                .padding(14.dp),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Icon(
                 imageVector = spendingItem.icon,
                 contentDescription = spendingItem.name,
                 tint = Color.Black.copy(0.8f),
-                modifier = Modifier.size(33.dp)
+                modifier = Modifier.size(22.dp)
             )
 
             Column {
                 Text(
                     text = spendingItem.name,
-                    fontSize = 15.sp,
+                    fontSize = 16.sp,
                     color = Color.Black.copy(0.8f)
                 )
                 Text(

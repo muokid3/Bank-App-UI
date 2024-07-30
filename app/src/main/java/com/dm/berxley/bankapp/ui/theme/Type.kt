@@ -14,7 +14,7 @@ val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = Font(R.font.rubik).toFontFamily(),
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
+        fontSize = 14.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp
     )
