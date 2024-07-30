@@ -91,7 +91,7 @@ fun ProfileScreen() {
                     modifier = Modifier
                         .padding(8.dp),
                 ) {
-                    Text(text = "Info", color = Color.Blue)
+                    Text(text = "Info", color = MaterialTheme.colorScheme.primary)
                     Spacer(modifier = Modifier.height(12.dp))
                     Text(text = "+123 456 789 012")
                     Text(text = "Phone")
@@ -122,7 +122,7 @@ fun ProfileScreen() {
                     modifier = Modifier
                         .padding(8.dp),
                 ) {
-                    Text(text = "Settings", color = Color.Blue)
+                    Text(text = "Settings", color = MaterialTheme.colorScheme.primary)
                     Spacer(modifier = Modifier.height(12.dp))
                     Text(text = "Notifications and Sound")
 
@@ -176,7 +176,7 @@ fun ProfileScreen() {
                     ) {
                         Text(text = "Theme")
 
-                        Text(text = "Default", color = Color.Blue)
+                        Text(text = "Default", color = MaterialTheme.colorScheme.primary)
                     }
                     Divide()
 
@@ -187,7 +187,7 @@ fun ProfileScreen() {
                     ) {
                         Text(text = "Language")
 
-                        Text(text = "English", color = Color.Blue)
+                        Text(text = "English", color = MaterialTheme.colorScheme.primary)
                     }
 
                     Spacer(modifier = Modifier.height(12.dp))
@@ -207,7 +207,7 @@ fun ProfileScreen() {
                     modifier = Modifier
                         .padding(8.dp),
                 ) {
-                    Text(text = "Support", color = Color.Blue)
+                    Text(text = "Support", color = MaterialTheme.colorScheme.primary)
                     Spacer(modifier = Modifier.height(12.dp))
                     Text(text = "Ask a Question")
 
@@ -233,7 +233,7 @@ fun ProfileScreen() {
 @Composable
 fun Divide() {
     Spacer(modifier = Modifier.height(12.dp))
-    HorizontalDivider(color = MaterialTheme.colorScheme.onPrimary)
+    HorizontalDivider(color = MaterialTheme.colorScheme.onSurfaceVariant.copy(0.3f))
     Spacer(modifier = Modifier.height(12.dp))
 }
 
