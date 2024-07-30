@@ -55,7 +55,7 @@ fun BottomNavigationBar(viewModel: MainViewModel, navController: NavController) 
                             }
 
                             3 -> {
-                                navController.navigate(Screen.Account.route)
+                                navController.navigate(Screen.Profile.route)
                                 viewModel.setBottomIndex(3)
                             }
                         }

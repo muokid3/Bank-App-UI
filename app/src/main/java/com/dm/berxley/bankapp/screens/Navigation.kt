@@ -24,7 +24,8 @@ fun Navigation(navController: NavController, paddingValues: PaddingValues) {
             WalletScreen()
         }
 
-        composable(Screen.Account.route){
+        composable(Screen.Profile.route){
+            ProfileScreen()
         }
         composable(Screen.Notifications.route){
         }
