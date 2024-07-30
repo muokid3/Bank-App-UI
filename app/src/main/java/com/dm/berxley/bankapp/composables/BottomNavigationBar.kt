@@ -3,10 +3,12 @@ package com.dm.berxley.bankapp.composables
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountBalanceWallet
 import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Wallet
+import androidx.compose.material.icons.outlined.AccountBalanceWallet
 import androidx.compose.material.icons.outlined.AccountBox
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Notifications
@@ -25,8 +27,8 @@ import com.dm.berxley.bankapp.viewmodels.MainViewModel
 
 val natItems = listOf<BottomNavItem>(
     BottomNavItem("Home", Icons.Filled.Home, Icons.Outlined.Home),
-    BottomNavItem("Wallet", Icons.Filled.Wallet, Icons.Outlined.Wallet),
-    BottomNavItem("Notifications", Icons.Filled.Notifications, Icons.Outlined.Notifications),
+    BottomNavItem("Wallet", Icons.Filled.AccountBalanceWallet, Icons.Outlined.AccountBalanceWallet),
+    BottomNavItem("Transactions", Icons.Filled.Wallet, Icons.Outlined.Wallet),
     BottomNavItem("Account", Icons.Filled.AccountBox, Icons.Outlined.AccountBox),
 )
 
@@ -50,7 +52,7 @@ fun BottomNavigationBar(viewModel: MainViewModel, navController: NavController) 
                             }
 
                             2 -> {
-                                navController.navigate(Screen.Notifications.route)
+                                navController.navigate(Screen.Transactions.route)
                                 viewModel.setBottomIndex(2)
                             }
 

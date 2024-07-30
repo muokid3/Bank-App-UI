@@ -27,7 +27,8 @@ fun Navigation(navController: NavController, paddingValues: PaddingValues) {
         composable(Screen.Profile.route){
             ProfileScreen()
         }
-        composable(Screen.Notifications.route){
+        composable(Screen.Transactions.route){
+            TransactionsScreen()
         }
     }
 
