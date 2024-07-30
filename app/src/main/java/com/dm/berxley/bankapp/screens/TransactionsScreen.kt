@@ -1,5 +1,6 @@
 package com.dm.berxley.bankapp.screens
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -181,7 +182,8 @@ fun TransactionsScreen() {
                 OutlinedCard(
                     modifier = Modifier
                         .weight(1f)
-                        .padding(end = 8.dp)
+                        .padding(end = 8.dp),
+                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.secondary)
                 ) {
                     Column(
                         modifier = Modifier
@@ -197,7 +199,8 @@ fun TransactionsScreen() {
                 OutlinedCard(
                     modifier = Modifier
                         .weight(1f)
-                        .padding(start = 8.dp)
+                        .padding(start = 8.dp),
+                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.secondary)
                 ) {
                     Column(
                         modifier = Modifier
@@ -255,7 +258,7 @@ fun TransactionItem(transaction: Transaction) {
         Icon(
             imageVector = transaction.imageVector,
             contentDescription = null,
-            tint = MaterialTheme.colorScheme.primary,
+            tint = if (transaction.imageVector == Icons.Filled.ArrowCircleDown) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.tertiary,
             modifier = Modifier.size(36.dp)
         )
         Spacer(modifier = Modifier.width(8.dp))

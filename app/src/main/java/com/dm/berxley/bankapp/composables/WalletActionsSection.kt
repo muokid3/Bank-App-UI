@@ -28,7 +28,6 @@ import androidx.compose.ui.text.font.toFontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dm.berxley.bankapp.R
-import com.dm.berxley.bankapp.ui.theme.Pink80
 
 @Composable
 fun WalletActionsSection(modifier: Modifier = Modifier) {
