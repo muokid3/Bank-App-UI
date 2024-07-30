@@ -10,12 +10,29 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Animation
 import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.ContactMail
+import androidx.compose.material.icons.filled.ContactPhone
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Key
+import androidx.compose.material.icons.filled.Language
+import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.filled.NotificationsActive
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.PrivateConnectivity
+import androidx.compose.material.icons.filled.QuestionAnswer
+import androidx.compose.material.icons.filled.Security
+import androidx.compose.material.icons.filled.Style
+import androidx.compose.material.icons.filled.Work
+import androidx.compose.material.icons.rounded.Person
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CardElevation
 import androidx.compose.material3.ElevatedCard
@@ -93,18 +110,55 @@ fun ProfileScreen() {
                 ) {
                     Text(text = "Info", color = MaterialTheme.colorScheme.primary)
                     Spacer(modifier = Modifier.height(12.dp))
-                    Text(text = "+123 456 789 012")
-                    Text(text = "Phone")
+
+                    Row(Modifier.fillMaxWidth()) {
+                        Icon(
+                            imageVector = Icons.Filled.ContactPhone,
+                            contentDescription = null,
+                            modifier = Modifier.size(28.dp),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Column {
+                            Text(text = "+123 456 789 012")
+                            Text(text = "Phone")
+                        }
+                    }
+
+
 
                     Divide()
 
-                    Text(text = "@muokid3")
-                    Text(text = "Username")
+                    Row(Modifier.fillMaxWidth()) {
+                        Icon(
+                            imageVector = Icons.Filled.ContactMail,
+                            contentDescription = null,
+                            modifier = Modifier.size(28.dp),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Column {
+                            Text(text = "@muokid3")
+                            Text(text = "Username")
+                        }
+                    }
 
                     Divide()
 
-                    Text(text = "Fullstack Developer")
-                    Text(text = "Bio")
+                    Row(Modifier.fillMaxWidth()) {
+                        Icon(
+                            imageVector = Icons.Filled.Work,
+                            contentDescription = null,
+                            modifier = Modifier.size(28.dp),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Column {
+                            Text(text = "Fullstack Developer")
+                            Text(text = "Bio")
+                        }
+                    }
+
 
                     Spacer(modifier = Modifier.height(12.dp))
 
@@ -124,15 +178,44 @@ fun ProfileScreen() {
                 ) {
                     Text(text = "Settings", color = MaterialTheme.colorScheme.primary)
                     Spacer(modifier = Modifier.height(12.dp))
-                    Text(text = "Notifications and Sound")
+
+                    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Filled.Notifications,
+                            contentDescription = null,
+                            modifier = Modifier.size(28.dp),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Text(text = "Notifications and Sound")
+                    }
 
                     Divide()
 
-                    Text(text = "Privacy and Security")
+                    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Filled.Key,
+                            contentDescription = null,
+                            modifier = Modifier.size(28.dp),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Text(text = "Privacy and Security")
+                    }
+
 
                     Divide()
 
-                    Text(text = "Data and Storage")
+                    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Filled.Security,
+                            contentDescription = null,
+                            modifier = Modifier.size(28.dp),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Text(text = "Data and Storage")
+                    }
 
                     Divide()
 
@@ -141,7 +224,16 @@ fun ProfileScreen() {
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(text = "Enable Animation")
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                imageVector = Icons.Filled.Animation,
+                                contentDescription = null,
+                                modifier = Modifier.size(28.dp),
+                                tint = MaterialTheme.colorScheme.primary
+                            )
+                            Spacer(modifier = Modifier.width(12.dp))
+                            Text(text = "Enable Animation")
+                        }
 
                         Switch(
                             checked = isChecked,
@@ -174,7 +266,17 @@ fun ProfileScreen() {
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(text = "Theme")
+
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                imageVector = Icons.Filled.Style,
+                                contentDescription = null,
+                                modifier = Modifier.size(28.dp),
+                                tint = MaterialTheme.colorScheme.primary
+                            )
+                            Spacer(modifier = Modifier.width(12.dp))
+                            Text(text = "Theme")
+                        }
 
                         Text(text = "Default", color = MaterialTheme.colorScheme.primary)
                     }
@@ -185,7 +287,16 @@ fun ProfileScreen() {
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(text = "Language")
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                imageVector = Icons.Filled.Language,
+                                contentDescription = null,
+                                modifier = Modifier.size(28.dp),
+                                tint = MaterialTheme.colorScheme.primary
+                            )
+                            Spacer(modifier = Modifier.width(12.dp))
+                            Text(text = "Language")
+                        }
 
                         Text(text = "English", color = MaterialTheme.colorScheme.primary)
                     }
@@ -209,15 +320,43 @@ fun ProfileScreen() {
                 ) {
                     Text(text = "Support", color = MaterialTheme.colorScheme.primary)
                     Spacer(modifier = Modifier.height(12.dp))
-                    Text(text = "Ask a Question")
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Filled.QuestionAnswer,
+                            contentDescription = null,
+                            modifier = Modifier.size(28.dp),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Text(text = "Ask a Question")
+                    }
 
                     Divide()
 
-                    Text(text = "F A Q")
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Filled.Info,
+                            contentDescription = null,
+                            modifier = Modifier.size(28.dp),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Text(text = "F A Q")
+                    }
+
 
                     Divide()
 
-                    Text(text = "Privacy Policy")
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Filled.PrivateConnectivity,
+                            contentDescription = null,
+                            modifier = Modifier.size(28.dp),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Text(text = "Privacy Policy")
+                    }
 
                     Spacer(modifier = Modifier.height(12.dp))
 
