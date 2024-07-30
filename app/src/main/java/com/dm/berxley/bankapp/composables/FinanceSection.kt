@@ -96,18 +96,18 @@ fun FinanceItem(index: Int) {
 
         Column(
             modifier = Modifier
-                .clip(RoundedCornerShape(25.dp))
-                .size(120.dp)
+                .clip(RoundedCornerShape(15.dp))
+                .size(100.dp)
                 .clickable { }
                 .background(MaterialTheme.colorScheme.secondaryContainer)
-                .padding(13.dp),
+                .padding(8.dp),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Box(
                 modifier = Modifier
-                    .clip(RoundedCornerShape(16.dp))
+                    .clip(RoundedCornerShape(8.dp))
                     .background(finance.iconBg)
-                    .padding(16.dp)
+                    .padding(8.dp)
             ) {
                 Icon(
                     imageVector = finance.icon,
@@ -121,7 +121,7 @@ fun FinanceItem(index: Int) {
                 text = finance.name,
                 color = MaterialTheme.colorScheme.onSecondaryContainer,
                 fontWeight = FontWeight.SemiBold,
-                fontSize = 15.sp
+                fontSize = 14.sp
             )
 
         }

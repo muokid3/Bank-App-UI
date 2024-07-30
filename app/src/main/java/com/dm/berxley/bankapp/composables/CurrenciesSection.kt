@@ -91,13 +91,13 @@ fun CurrenciesSection() {
         mutableStateOf(true)
     }
     var iconState by remember {
-        mutableStateOf(Icons.Rounded.KeyboardArrowDown)
+        mutableStateOf(Icons.Rounded.KeyboardArrowUp)
     }
 
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = 32.dp),
+            .padding(top = 8.dp),
         contentAlignment = Alignment.BottomCenter
     ) {
 
@@ -121,9 +121,9 @@ fun CurrenciesSection() {
                     .clickable {
                         isVisible = !isVisible
                         if (isVisible) {
-                            iconState = Icons.Rounded.KeyboardArrowDown
-                        } else {
                             iconState = Icons.Rounded.KeyboardArrowUp
+                        } else {
+                            iconState = Icons.Rounded.KeyboardArrowDown
                         }
                     }) {
                     Icon(
@@ -168,7 +168,7 @@ fun CurrenciesSection() {
                             .padding(horizontal = 16.dp)
                     ) {
 
-                        Spacer(modifier = Modifier.height(16.dp))
+                        Spacer(modifier = Modifier.height(12.dp))
                         Row(modifier = Modifier.fillMaxWidth()) {
 
                             Text(
@@ -197,9 +197,8 @@ fun CurrenciesSection() {
                             )
                         }
 
-                        Spacer(modifier = Modifier.height(16.dp))
 
-                        LazyColumn {
+                        LazyColumn(modifier = Modifier.height(200.dp)) {
 
                             items(currencies.size) { index ->
                                 CurrencyItem(index = index, width = width)
@@ -239,7 +238,7 @@ fun CurrencyItem(index: Int, width: Dp) {
                     .padding(4.dp)
             ) {
                 Icon(
-                    modifier = Modifier.size(18.dp),
+                    modifier = Modifier.size(16.dp),
                     imageVector = currency.icon,
                     contentDescription = currency.name,
                     tint = Color.White
@@ -252,7 +251,7 @@ fun CurrencyItem(index: Int, width: Dp) {
                     .padding(start = 10.dp),
                 text = currency.name,
                 fontWeight = FontWeight.Bold,
-                fontSize = 18.sp,
+                fontSize = 14.sp,
                 color = MaterialTheme.colorScheme.onBackground,
             )
         }
@@ -263,7 +262,7 @@ fun CurrencyItem(index: Int, width: Dp) {
                 .padding(start = 10.dp),
             text = "$ ${currency.buy}",
             fontWeight = FontWeight.Bold,
-            fontSize = 16.sp,
+            fontSize = 14.sp,
             color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.End
         )
@@ -274,7 +273,7 @@ fun CurrencyItem(index: Int, width: Dp) {
                 .padding(start = 10.dp),
             text = "$ ${currency.sell}",
             fontWeight = FontWeight.Bold,
-            fontSize = 16.sp,
+            fontSize = 14.sp,
             color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.End
         )

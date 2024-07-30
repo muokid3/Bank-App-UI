@@ -97,16 +97,16 @@ fun CardItem(index: Int) {
     ){
         Column(
             modifier = Modifier
-                .clip(RoundedCornerShape(25.dp))
+                .clip(RoundedCornerShape(20.dp))
                 .background(card.color)
                 .width(250.dp)
-                .height(150.dp)
+                .height(130.dp)
                 .clickable { }
-                .padding(vertical = 8.dp, horizontal = 16.dp),
+                .padding(vertical = 8.dp, horizontal = 12.dp),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Image(
-                modifier = Modifier.width(60.dp),
+                modifier = Modifier.width(50.dp),
                 painter = image,
                 contentDescription = card.name)
 
@@ -114,17 +114,17 @@ fun CardItem(index: Int) {
 
             Text(text = card.name,
                 color = Color.White,
-                fontSize = 16.sp,
+                fontSize = 14.sp,
                 fontWeight = FontWeight.Bold
             )
             Text(text = "$ ${card.balance}",
                 color = Color.White,
-                fontSize = 20.sp,
+                fontSize = 18.sp,
                 fontWeight = FontWeight.Bold
             )
             Text(text = card.cardNumber,
                 color = Color.White,
-                fontSize = 16.sp,
+                fontSize = 14.sp,
                 fontWeight = FontWeight.Bold
             )
         }

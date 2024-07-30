@@ -2,15 +2,19 @@ package com.dm.berxley.bankapp.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dm.berxley.bankapp.composables.BottomNavigationBar
@@ -27,6 +31,7 @@ fun HomeScreen() {
         state = rememberTopAppBarState()
     )
     Scaffold(
+       // modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             MainTopAppBar(
                 scrollBehavior = scrollBehavior,
@@ -34,16 +39,24 @@ fun HomeScreen() {
                 title = "Home"
             )
         }
-    ) {
+    ) { paddingValues ->
 
-        Column(Modifier.padding(it)) {
-            WalletSection()
-            Spacer(modifier = Modifier.height(8.dp))
-            CardSection()
-            Spacer(modifier = Modifier.height(8.dp))
-            FinanceSection()
-            CurrenciesSection()
-        }
+        MainHomeScreen(modifier = Modifier
+            .padding(paddingValues)
+            .fillMaxSize())
+    }
+}
+
+@Composable
+fun MainHomeScreen(modifier: Modifier) {
+
+    Column(modifier = modifier.verticalScroll(rememberScrollState())) {
+        WalletSection()
+        Spacer(modifier = Modifier.height(8.dp))
+        CardSection()
+        Spacer(modifier = Modifier.height(8.dp))
+        FinanceSection()
+        CurrenciesSection()
     }
 }
 
