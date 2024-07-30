@@ -116,7 +116,7 @@ fun ProfileScreen() {
                             imageVector = Icons.Filled.ContactPhone,
                             contentDescription = null,
                             modifier = Modifier.size(28.dp),
-                            tint = MaterialTheme.colorScheme.primary
+                            tint = MaterialTheme.colorScheme.secondary
                         )
                         Spacer(modifier = Modifier.width(12.dp))
                         Column {
@@ -134,7 +134,7 @@ fun ProfileScreen() {
                             imageVector = Icons.Filled.ContactMail,
                             contentDescription = null,
                             modifier = Modifier.size(28.dp),
-                            tint = MaterialTheme.colorScheme.primary
+                            tint = MaterialTheme.colorScheme.secondary
                         )
                         Spacer(modifier = Modifier.width(12.dp))
                         Column {
@@ -150,7 +150,7 @@ fun ProfileScreen() {
                             imageVector = Icons.Filled.Work,
                             contentDescription = null,
                             modifier = Modifier.size(28.dp),
-                            tint = MaterialTheme.colorScheme.primary
+                            tint = MaterialTheme.colorScheme.secondary
                         )
                         Spacer(modifier = Modifier.width(12.dp))
                         Column {
@@ -184,7 +184,7 @@ fun ProfileScreen() {
                             imageVector = Icons.Filled.Notifications,
                             contentDescription = null,
                             modifier = Modifier.size(28.dp),
-                            tint = MaterialTheme.colorScheme.primary
+                            tint = MaterialTheme.colorScheme.secondary
                         )
                         Spacer(modifier = Modifier.width(12.dp))
                         Text(text = "Notifications and Sound")
@@ -197,7 +197,7 @@ fun ProfileScreen() {
                             imageVector = Icons.Filled.Key,
                             contentDescription = null,
                             modifier = Modifier.size(28.dp),
-                            tint = MaterialTheme.colorScheme.primary
+                            tint = MaterialTheme.colorScheme.secondary
                         )
                         Spacer(modifier = Modifier.width(12.dp))
                         Text(text = "Privacy and Security")
@@ -211,7 +211,7 @@ fun ProfileScreen() {
                             imageVector = Icons.Filled.Security,
                             contentDescription = null,
                             modifier = Modifier.size(28.dp),
-                            tint = MaterialTheme.colorScheme.primary
+                            tint = MaterialTheme.colorScheme.secondary
                         )
                         Spacer(modifier = Modifier.width(12.dp))
                         Text(text = "Data and Storage")
@@ -229,7 +229,7 @@ fun ProfileScreen() {
                                 imageVector = Icons.Filled.Animation,
                                 contentDescription = null,
                                 modifier = Modifier.size(28.dp),
-                                tint = MaterialTheme.colorScheme.primary
+                                tint = MaterialTheme.colorScheme.secondary
                             )
                             Spacer(modifier = Modifier.width(12.dp))
                             Text(text = "Enable Animation")
@@ -272,7 +272,7 @@ fun ProfileScreen() {
                                 imageVector = Icons.Filled.Style,
                                 contentDescription = null,
                                 modifier = Modifier.size(28.dp),
-                                tint = MaterialTheme.colorScheme.primary
+                                tint = MaterialTheme.colorScheme.secondary
                             )
                             Spacer(modifier = Modifier.width(12.dp))
                             Text(text = "Theme")
@@ -292,7 +292,7 @@ fun ProfileScreen() {
                                 imageVector = Icons.Filled.Language,
                                 contentDescription = null,
                                 modifier = Modifier.size(28.dp),
-                                tint = MaterialTheme.colorScheme.primary
+                                tint = MaterialTheme.colorScheme.secondary
                             )
                             Spacer(modifier = Modifier.width(12.dp))
                             Text(text = "Language")
@@ -325,7 +325,7 @@ fun ProfileScreen() {
                             imageVector = Icons.Filled.QuestionAnswer,
                             contentDescription = null,
                             modifier = Modifier.size(28.dp),
-                            tint = MaterialTheme.colorScheme.primary
+                            tint = MaterialTheme.colorScheme.secondary
                         )
                         Spacer(modifier = Modifier.width(12.dp))
                         Text(text = "Ask a Question")
@@ -338,7 +338,7 @@ fun ProfileScreen() {
                             imageVector = Icons.Filled.Info,
                             contentDescription = null,
                             modifier = Modifier.size(28.dp),
-                            tint = MaterialTheme.colorScheme.primary
+                            tint = MaterialTheme.colorScheme.secondary
                         )
                         Spacer(modifier = Modifier.width(12.dp))
                         Text(text = "F A Q")
@@ -352,7 +352,7 @@ fun ProfileScreen() {
                             imageVector = Icons.Filled.PrivateConnectivity,
                             contentDescription = null,
                             modifier = Modifier.size(28.dp),
-                            tint = MaterialTheme.colorScheme.primary
+                            tint = MaterialTheme.colorScheme.secondary
                         )
                         Spacer(modifier = Modifier.width(12.dp))
                         Text(text = "Privacy Policy")

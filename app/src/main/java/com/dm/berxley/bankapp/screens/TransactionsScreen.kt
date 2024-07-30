@@ -3,6 +3,7 @@ package com.dm.berxley.bankapp.screens
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -35,6 +36,8 @@ import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -42,6 +45,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dm.berxley.bankapp.composables.MainTopAppBar
 import com.dm.berxley.bankapp.models.Transaction
+import com.dm.berxley.bankapp.ui.theme.BlueEnd
+import com.dm.berxley.bankapp.ui.theme.BlueStart
+import com.dm.berxley.bankapp.ui.theme.GreenStart
+import com.dm.berxley.bankapp.ui.theme.errorLight
+import com.dm.berxley.bankapp.ui.theme.primaryLight
+import com.dm.berxley.bankapp.ui.theme.secondaryLight
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -161,13 +170,28 @@ fun TransactionsScreen() {
                     contentColor = MaterialTheme.colorScheme.onPrimary
                 )
             ) {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
+
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(
+                            brush = Brush.linearGradient(
+                                listOf(
+                                    MaterialTheme.colorScheme.primary,
+                                    MaterialTheme.colorScheme.error
+                                )
+                            )
+                        ),
                 ) {
-                    Text(text = "12,533 USD", fontSize = 22.sp, fontWeight = FontWeight.Bold)
-                    Text(text = "Current Balance", fontSize = 15.sp)
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(text = "12,533 USD", fontSize = 22.sp, fontWeight = FontWeight.Bold)
+                        Text(text = "Current Balance", fontSize = 15.sp)
+
+                    }
 
                 }
 
@@ -230,9 +254,8 @@ fun TransactionsScreen() {
                     .padding(horizontal = 16.dp)
             )
 
-            LazyColumn{
-                itemsIndexed(items = transactions){
-                    index, item ->
+            LazyColumn {
+                itemsIndexed(items = transactions) { index, item ->
                     TransactionItem(transaction = item)
                     HorizontalDivider(
                         modifier = Modifier
@@ -258,7 +281,7 @@ fun TransactionItem(transaction: Transaction) {
         Icon(
             imageVector = transaction.imageVector,
             contentDescription = null,
-            tint = if (transaction.imageVector == Icons.Filled.ArrowCircleDown) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.tertiary,
+            tint = if (transaction.imageVector == Icons.Filled.ArrowCircleDown) MaterialTheme.colorScheme.error else GreenStart,
             modifier = Modifier.size(36.dp)
         )
         Spacer(modifier = Modifier.width(8.dp))
